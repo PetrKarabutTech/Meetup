@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using MeetupSample.WebApp;
 using CefSharp;
 using System.Reflection;
+using CefSharp.WinForms;
 using Microsoft.Extensions.Hosting;
 
 namespace MeetupSample.Desktop
@@ -46,6 +47,8 @@ namespace MeetupSample.Desktop
         private void InitializeComponent()
         {
             chromiumWebBrowser1 = new CefSharp.WinForms.ChromiumWebBrowser();
+
+            Cef.Initialize(new CefSettings());
 
             _ = Task.Run(async () =>
             {
